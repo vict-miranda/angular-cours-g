@@ -1,0 +1,15 @@
+<div class="container pt-5 pb-5">
+    <div class="row justify-content-md-center">
+      <div class="col col-md-4 mb-4">
+        <div class="card v-cards" style="width: 18rem;">
+          <img style="cursor: pointer;" [routerLink]="['/detail', heroe.id]"[src]="heroe.image" class="card-img-top" alt="..." class="img-thumbnail" width="300" height="300">
+            <div class="card-body">
+              <h5 class="card-title">{{heroe.name}}</h5>
+              <p class="card-text">{{heroe.company}}</p>
+              <a class="btn btn-primary" style="cursor: pointer !important;" [routerLink]="['/detail', heroe.id]">View details</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  

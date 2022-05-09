@@ -1,0 +1,22 @@
+<div class="container pt-5 pb-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img  [src]="heroe.big_image" class="img-fluid" alt="...">
+                </div>
+              </div>
+            
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{heroe.name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{heroe.company}}</h6>
+                  <p class="card-text">{{heroe.description}}</p>
+                  <a [routerLink]="['/']" class="card-link">Go Back</a>
+                </div>
+              </div>
+        </div>
+    </div>    
+</div>
