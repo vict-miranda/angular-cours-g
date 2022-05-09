@@ -27,8 +27,4 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  goToHeroe(heroe: IHeroe) {
-    this.router.navigate(['/detail', heroe.id]);
-  }
-
 }

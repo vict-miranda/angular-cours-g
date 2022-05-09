@@ -1,14 +1,7 @@
 <div class="container pt-5 pb-5">
     <div class="row justify-content-md-left">
       <div class="col col-md-4 mb-4"  *ngFor="let heroe of heroes">
-        <div class="card" style="width: 18rem;">
-          <img [src]="heroe.image" class="card-img-top" alt="..." class="img-thumbnail" width="300" height="300">
-            <div class="card-body">
-              <h5 class="card-title">{{heroe.name}}</h5>
-              <p class="card-text">{{heroe.company}}</p>
-              <a [routerLink]="['/detail', heroe.id]" class="btn btn-primary">View details</a>
-            </div>
-          </div>
+        <app-heroe [hero]="heroe"></app-heroe>
       </div>
     </div>
   </div>

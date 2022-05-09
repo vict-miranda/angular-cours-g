@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IHeroe } from '../../interfaces/heroes.interface';
 
 @Component({
@@ -7,7 +7,7 @@ import { IHeroe } from '../../interfaces/heroes.interface';
   styleUrls: ['./heroe.component.css']
 })
 export class HeroeComponent implements OnInit {
-  heroe: IHeroe = { id: 0, name: ''};
+  @Input() hero!: IHeroe;
 
   constructor() { }
 
