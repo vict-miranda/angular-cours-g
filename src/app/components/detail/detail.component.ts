@@ -35,13 +35,17 @@ export class DetailComponent implements OnInit {
     //   complete: () => this.loaded = true
     // })
 
-    this.heroesService.getHeroes().subscribe({
-      next: (h: IHeroe[]) =>  { 
-        this.heroe = h.find(x => x.id == id)!;
-      },
-      error: (e) => this.loaded = true,
-      complete: () => this.loaded = true
-    })
+    // this.heroesService.getHeroes().subscribe({
+    //   next: (h: IHeroe[]) =>  { 
+    //     this.heroe = h.find(x => x.id == id)!;
+    //   },
+    //   error: (e) => this.loaded = true,
+    //   complete: () => this.loaded = true
+    // })
+
+    this.heroesService.getHeroes().subscribe(data => {
+      this.heroe = data.find(x => x.id == id)!
+    });
   }
 
 }

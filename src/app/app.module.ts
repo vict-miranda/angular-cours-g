@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HeroesService } from './services/heroes.service';
 import { SearchComponent } from './components/search/search.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
+
+import { HttpErrorInterceptor } from '../app/interceptors/http-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,12 @@ import { HeroeComponent } from './components/heroe/heroe.component';
     FormsModule
   ],
   providers: [
-    HeroesService
+    HeroesService,
+    {
+      provide: HTTP_INTERCEPTORS, 
+      useClass: HttpErrorInterceptor, 
+      multi: true 
+    }
   ],
   bootstrap: [AppComponent]
 })
